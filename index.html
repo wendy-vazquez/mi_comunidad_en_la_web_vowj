@@ -14,39 +14,42 @@
         font-weight: weight;
           font-style: normal;
     }
+    .seccion {
+      display: none;
+    }
+    .seccion.activa {
+      display: block;
+    }
+
 </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container md-5">
-    <a class="navbar-brand" style="color: rgb(253, 4, 4);" href="#">Monumento A La Mexicanidad</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#historia">Historia</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#simbolismo" style="color: rgb(5, 5, 5);">Simbolismo</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#funcio" style="color: rgb(0, 0, 0);">Función Social</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#referencias" style="color: rgb(255, 255, 255);">Referencias</a>
-      </ul>
+  
+   <nav class="navbar navbar-expand-lg bg-light mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand text-danger fw-bold" href="#">Monumento a la Mexicanidad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSeccion('historia')" style="color: crimson;">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSeccion('simbolismo')" style="color: crimson;">Simbolismo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSeccion('comunidad')" style="color: black;">Comunidad</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSeccion('referencias')" style="color: powderblue;">Referencias</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 <main class="container mt-5" style="background-color: rgb(141, 238, 238);">
 
-    <section id="historia" class="mb5">
-        <h1 class="text-center mb3">Historia</h1>
-        <img src="imagenes/image.webp" alt="Plaza de la Mexicanidad / Foto: Edgar García" class="rounded float-start" style="width: 300px; height: 200px; margin-right: 20px;">
-        <p>El Monumento a la Mexicanidad es una escultura monumental urbana ubicada en Ciudad Juárez, Chihuahua, México.
+  <section id="historia" class="mb5">
+     <div class="card" style="width: 18rem;">
+  <img src="imagenes/image.webp" class="card-img-top" alt="Plaza de la Mexicanidad / Foto: Edgar García">
+  <h5 class="card-title text-center">Historia De La x</h5>
+  <div class="card-body">
+    <p>El Monumento a la Mexicanidad es una escultura monumental urbana ubicada en Ciudad Juárez, Chihuahua, México.
              Es llamada popularmente La X o La X de Sebastián, tanto por su peculiar forma escultórica, como por honor a su autor. 
              El colosal monumento se encuentra ubicado dentro de la Plaza de la Mexicanidad (un espacio público diseñado para generar identidad 
              local, cultural, y que actúe como punto de encuentro y celebración de actividades sociales, artísticas y cívicas), la cual lleva 
@@ -55,14 +58,16 @@
         <p>Fue diseñado por Enrique Carbajal González, más conocido como Sebastián, un escultor mexicano reconocido por varias obras monumentales 
             en México. Fue inaugurado el 24 de mayo de 2013 durante la administración municipal de Héctor Murguía Lardizábal.Su costo de construcción,
              incluyendo la Plaza de la Mexicanidad, fue de aproximadamente 81 millones 750 mil pesos mexicanos.</p>
-    </section>
+  </div>
+</div>
+  </section>
 
     <section id="Simbolismo" class="mb5">
         <h1 class="text-center mb3">Simbolismo</h1>
         <p>
           hay varias interpretaciones de simbolismo de la X, algunas de las cuales incluyen:
         </p>
-        <h2 class="text-center mb3">La forma de la “X”</h2>
+        <h3 class="text-center mb3">La forma de la “X”</h3>
         <p>
           Representa la unión de dos culturas fundacionales de México: la indígena y la española. También se le relaciona con el mestizaje, es decir, 
           la mezcla cultural, genética y simbólica que dio origen a la identidad mexicana. Otra interpretación no oficial pero popular señala que la “X”
@@ -84,6 +89,15 @@
 </main>
 
 <footer></footer>
+
+<script>
+  function mostrarSeccion(id) {
+    const secciones = document.querySelectorAll('.seccion');
+    secciones.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+</script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
