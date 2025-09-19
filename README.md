@@ -1,5 +1,6 @@
 # MI comunidad en la web
 ## creado por: **Vazquez Ortiz Wendy Judith**
+## Grado y grupo: 5-D
 ## Iniciado: 17/09/2025
 ## terminado: 18/09/2025
 
